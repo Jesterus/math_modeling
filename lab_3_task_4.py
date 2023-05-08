@@ -1,16 +1,16 @@
-import numpy as np  # импорт модуля numpy для работы с массивами
+from numpy import sin
+import numpy as np
 
-N = 3
-M = 4
+N = int(input("Введите число строк: "))
 
-# Создаем массив NxM и вычисляем значения элементов
-A = np.zeros((N, M))  # создаем массив из нулей размером NxM
+M = int(input("Введите число столбцов: "))
+
+mtx = np.zeros((N, M))
+
 for i in range(N):
     for j in range(M):
-        A[i, j] = np.sin(N * i + M * j + (1 if A.itemsize == 4 else 0))
+        mtx[i,j] = (sin(N*(i+1) + M*(j+1)))
+        if mtx[i,j] < 0:
+            mtx[i,j] = 0
 
-# Заменяем отрицательные значения на 0
-A[A < 0] = 0
-
-# Выводим массив на экран
-print(A)
+print(mtx)
