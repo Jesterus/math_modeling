@@ -12,3 +12,4 @@ def crutoi_chuvak(a=1, b=1, c=1):
 crutoi_chuvak()
 
 help(crutoi_chuvak)
+print('Спасибо за понимание!')
